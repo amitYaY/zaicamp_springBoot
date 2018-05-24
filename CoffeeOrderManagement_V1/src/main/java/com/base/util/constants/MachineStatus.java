@@ -1,4 +1,4 @@
-package com.zaicamp.base.project.util.constants;
+package com.base.util.constants;
 
 public enum MachineStatus {
 	
