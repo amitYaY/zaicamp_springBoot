@@ -4,7 +4,4 @@ server:
 spring:
   h2:
     console:
-      enabled: true
-      
-  datasource:
-    name: zaicampdb
+      enabled: true 
