@@ -25,6 +25,17 @@ public class CoffeeOrderManagementV1Application {
 		
 		CoffeeMachineServiceImpl machineServiceImpl = context.getBean(CoffeeMachineServiceImpl.class);
 		machineServiceImpl.saveMachine(machine);
+		
+		Iterable<CoffeeMachine> machines = machineServiceImpl.getAllMachine();
+		
+		CoffeeMachine coffeeMachine = machines.iterator().next();
+		
+		coffeeMachine.setQuantityOfCoffeeBeans(15.0);
+		coffeeMachine.setQuantityOfMilk(16.0);
+		coffeeMachine.setQuantityOfWater(17.0);
+		coffeeMachine.setStatus(MachineStatus.OFF.getStatus());
+		
+		machineServiceImpl.updateMachine(coffeeMachine);
 	}
 
 }

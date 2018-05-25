@@ -23,4 +23,21 @@ public class CoffeeMachineServiceImpl implements CoffeeMachineService {
 		coffeeMachineDao.saveMachine(machine);
 		logger.info("<<<< saveMachine Exited.");
 	}
+
+	@Override
+	public void updateMachine(CoffeeMachine machine) {
+		logger.info(">>>> updateMachine Entered.");
+		coffeeMachineDao.updateMachine(machine);
+		logger.info("<<<< updateMachine Exited.");
+		
+	}
+
+	@Override
+	public Iterable<CoffeeMachine> getAllMachine() {
+		logger.info(">>>> getMachine Entered.");
+		Iterable<CoffeeMachine> machines = coffeeMachineDao.getAllMachine();
+		logger.info("<<<< getMachine Exited.");
+		return machines;
+	}
+	
 }

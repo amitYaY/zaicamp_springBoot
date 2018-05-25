@@ -23,4 +23,20 @@ public class CoffeeMachineDaoImpl implements CoffeeMachineDao {
 		coffeeMachineRepository.save(machine);
 		logger.info("<<<< saveMachine Exited.");
 	}
+
+	@Override
+	public void updateMachine(CoffeeMachine machine) {
+		logger.info(">>>> updateMachine Entered.");
+		coffeeMachineRepository.save(machine);
+		logger.info("<<<< updateMachine Exited.");
+	}
+
+	@Override
+	public Iterable<CoffeeMachine> getAllMachine() {
+		logger.info(">>>> getMachine Entered.");
+		Iterable<CoffeeMachine> machines = coffeeMachineRepository.findAll();
+		logger.info("<<<< getMachine Exited.");
+		return machines;
+	}
+	
 }

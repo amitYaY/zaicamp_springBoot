@@ -1,17 +1,18 @@
 package com.base.domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.base.listener.entity.CoffeeMachineListener;
+
 @Entity
 @Table(name = "COFFEE_MACHINE")
-@Access(AccessType.FIELD)
+@EntityListeners(value = {CoffeeMachineListener.class})
 public class CoffeeMachine {
 
 	@Id
