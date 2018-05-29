@@ -1,13 +1,15 @@
 package com.base.service;
 
+import java.util.List;
+
 import com.base.domain.CoffeeMachine;
 
 public interface CoffeeMachineService {
 	
-	public abstract void saveMachine(CoffeeMachine machine);
+	public abstract CoffeeMachine saveMachine(CoffeeMachine machine);
 	
-	public abstract void updateMachine(CoffeeMachine machine);
+	public abstract CoffeeMachine updateMachine(CoffeeMachine machine);
 	
-	public abstract Iterable<CoffeeMachine> getAllMachine();
+	public abstract List<CoffeeMachine> getAllMachine();
 
 }
