@@ -14,3 +14,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+
+order:
+  type:
+    beans:
+      espresso:  10
+      cappacino:  12
+    milk:
+      espresso:  10
+      cappacino:  12

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import com.base.listener.entity.OderListener;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "COFFEE_ORDER")
 @EntityListeners(value = {OderListener.class})
 public class Order {
 

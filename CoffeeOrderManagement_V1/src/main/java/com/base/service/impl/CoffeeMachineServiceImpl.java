@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 import com.base.dao.CoffeeMachineDao;
 import com.base.domain.CoffeeMachine;
-import com.base.domain.Order;
 import com.base.service.CoffeeMachineService;
 
 @Component

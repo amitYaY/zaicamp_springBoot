@@ -7,6 +7,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import com.base.dao.OrderDao;
@@ -21,10 +22,20 @@ public class OrderSeviceImpl implements OrderSevice {
 	@Autowired
 	private OrderDao orderDao;
 	
+	@Autowired
+	private Environment environment;
+	
 	@Override
 	public Order saveOrder(Order order) {
 		logger.info(">>>> saveOrder Entered.");
 		Order orderResponse = orderDao.saveOrder(order);
+		if(orderResponse != null) {
+			String beanPropKey = "order.type.beans."+orderResponse.getCoffeeType();
+			String beanAmnt = environment.getProperty(beanPropKey);
+			logger.info("##############################################");
+			logger.info("BeanAmnt: "+beanAmnt);
+			logger.info("##############################################");
+		}
 		logger.info("<<<< saveOrder Exited.");
 		return orderResponse;
 	}
