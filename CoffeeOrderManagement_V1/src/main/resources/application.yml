@@ -23,3 +23,8 @@ order:
     milk:
       espresso:  10
       cappacino:  12
+      
+machine:
+  config:
+    milk:  10
+    beans:  10

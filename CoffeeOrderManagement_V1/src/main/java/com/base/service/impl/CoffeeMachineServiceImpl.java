@@ -35,7 +35,6 @@ public class CoffeeMachineServiceImpl implements CoffeeMachineService {
 		CoffeeMachine machineResponse = coffeeMachineDao.updateMachine(machine);
 		logger.info("<<<< updateMachine Exited.");
 		return machineResponse;
-		
 	}
 
 	@Override

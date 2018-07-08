@@ -1,11 +1,16 @@
 package com.base.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.base.listener.entity.CoffeeMachineListener;
@@ -29,8 +34,12 @@ public class CoffeeMachine {
 	@Column(name = "WATER_QUANTITY")
 	private Double quantityOfWater;
 
-	@Column(name = "MCHINE_STATUS")
+	@Column(name = "MACHINE_STATUS")
 	private String status;
+	
+	@Column(name = "ORDERS")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="machineId", cascade= {CascadeType.ALL})
+	private List<Order> orders;
 
 	public int getMachineId() {
 		return machineId;
@@ -70,6 +79,14 @@ public class CoffeeMachine {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 }
